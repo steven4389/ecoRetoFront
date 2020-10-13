@@ -39,13 +39,10 @@ const Login = () => {
         const response = await dispatch(loginAction(user));
         //accion a tomar
         if(response === '1'){
-            history.push('/homeApp')
+            history.push('/admin')
         }else if(response === '0'){
-            history.push('/profile')
-        }else if(response === 'invalid'){
-            setError(true);
-        }else{
-            //letrero error de conexion
+            //history.push('/profile')
+            alert('login incorrector')
         }
         
     }
