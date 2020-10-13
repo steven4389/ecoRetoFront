@@ -1,10 +1,13 @@
 import React from 'react'
 import './adminItem.css'
+import { useHistory } from 'react-router-dom';
 
 const AdminItem = () => {
 
-    const departmentRedirect =()=> {
+    const history = useHistory();
 
+    const departmentRedirect =()=> {
+        history.push('/departments');
     }
 
     return (
