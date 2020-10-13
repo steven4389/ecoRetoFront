@@ -1,0 +1,8 @@
+.buildingCard{
+    width: 15%;
+    height: 30vh;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgb(196, 192, 192);
+    float: left;
+}
