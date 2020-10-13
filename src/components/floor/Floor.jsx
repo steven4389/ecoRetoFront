@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Departments = () => {
+const Floor = () => {
     return (
         <div>
-            dep
+            
         </div>
     )
 }
-export default Departments
+export default Floor

@@ -7,7 +7,7 @@ const AdminItem = () => {
     const history = useHistory();
 
     const departmentRedirect =()=> {
-        history.push('/departments');
+        history.push('/floor');
     }
 
     return (
