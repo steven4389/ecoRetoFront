@@ -74,7 +74,7 @@ export function getFloorsAction(building){
     }
 }
 
-export function getFloorAction(){    
+export function getFloorAction(floorId){    
     return async(dispatch) => {
         try {
             

@@ -17,6 +17,9 @@ const Building = ({...props}) => {
      }, [])
 
     //props.match.params.id
+    const callFloor = (id) => {
+        alert('aqui id', id);
+    }
     return ( 
         <>
             <div className="building contenedor mt-5">
@@ -28,14 +31,15 @@ const Building = ({...props}) => {
                     <div className="col-2">
                         {
                             floors.map((floor, i) => {
+                                console.log(floor)
                                 return (<div className="" key={i}>
-                                    <h2 className='btn btn-primary px-3'>{floor.nombre}</h2>
+                                    <h2 className='btn btn-primary px-3' onClick={() => callFloor(floor.id)}>{floor.nombre}</h2>
                                 </div>)
                             })
                         }
                     </div>
                     <div className="building-body col-10 p-3">
-                        <Floor />  
+                        {/* <Floor floor={}/>   */}
                     </div>
                 </div>
             </div>
