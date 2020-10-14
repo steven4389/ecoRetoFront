@@ -55,7 +55,7 @@ const Login = () => {
                     <div className="pltBoxLogo">
                         <span>Normal Asistente</span>
                     </div>
-<br/>
+                    <br />
                     <fieldset>
                         <div className="fields">
                             <label htmlFor="email">Email</label>
