@@ -1,22 +1,33 @@
 import React from 'react'
 import './adminItem.css'
 import { useHistory } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
 
 const AdminItem = () => {
 
     const history = useHistory();
 
     const departmentRedirect =()=> {
-        history.push('/floor');
+        history.push('/building');
     }
 
     return (
-        <div onClick={departmentRedirect} className="buildingCard">
-            <div>
-                <h3>Edificio:</h3>
+        <div className="buildingCard">
+            <br/>
+            <div className="icono">
+            <i className="fa fa-building fa-10x"></i>
             </div>
-            <div>
-                <span>Número puestos de trabajo:</span>
+            <div className="body">
+                <h5>Edificio</h5>
+                <span>Capacidad</span>
+                <br/>
+                <span>Ocupación</span>
+                <br/>
+                <span>Número puestos de trabajo</span>
+                <br/>
+            </div>
+            <div className="boton" onClick={departmentRedirect}>
+                <span>Ir al edificio</span>
             </div>
         </div>
     )
