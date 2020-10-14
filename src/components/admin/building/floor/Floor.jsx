@@ -8,7 +8,7 @@ const Floor = ({floor}) => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getFloorAction())
+        dispatch(getFloorAction(floor.id))
     }, [])
     return ( 
         <>
