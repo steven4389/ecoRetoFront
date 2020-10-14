@@ -79,18 +79,19 @@ export function getFloorAction(){
         try {
             
             //clienteAxios.get('/get/pisos',building)
-
+            var usuarios = [
+                {idPuesto: 1, nombre: 'Carlos', cargo: 'Gerente', puesto: '01'},
+                {idPuesto: 2, nombre: 'Juan', cargo: 'Secreteario', puesto: '02'},
+            ]
             var floor = {
                     id:1,
                     capacidad: 50,
-                    puestosDisponibles: 20,
-                    usuarios = [
-                        {idPuesto: 1, nombre: 'Carlos', cargo: 'Gerente', puesto: '01'},
-                        {idPuesto: 2, nombre: 'Juan', cargo: 'Secreteario', puesto: '02'},
-                    ]
-                }
+                    puestosDisponibles: 20
+            }
             
-               await dispatch(getFloor(floor));
+            floor.usuarios = usuarios;
+            
+            await dispatch(getFloor(floor));
                
                return '1';
         } catch (error) {
