@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import './login.css';
 
 //redux
-import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
-import { loginAction } from '../../actions/authAction'
+import {useHistory} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux'
+import {loginAction} from '../../actions/authAction'
 
 const Login = () => {
 
@@ -14,18 +15,18 @@ const Login = () => {
     const emailedux = useSelector(state => state.auth.email)
 
     //states del componente
-    const [user,setUser] = useState({
-        email:'',
-        password:''
+    const [user, setUser] = useState({
+        email: '',
+        password: ''
     })
 
-    const [errorLogin,setError] = useState(false);
+    const [errorLogin, setError] = useState(false);
 
     //funciones
     const onChange = e => {
         setUser({
             ...user,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -38,63 +39,63 @@ const Login = () => {
         //envio formulario
         const response = await dispatch(loginAction(user));
         //accion a tomar
-        if(response === '1'){
+        if(response === '1') {
             history.push('/user')
-        }else if(response === '0'){
+        } else if(response === '0') {
             //history.push('/profile')
             alert('login incorrector')
         }
-        
+
     }
 
-    return ( 
+    return (
         <div className="home">
             <div className="pltZoneLogin">
                 <form id="frmLogin">
                     <div className="pltBoxLogo">
-                        {/**<img src={logo} alt="Lantia" className="pltLogo" width="180px"/> */}
-                        <span>Iniciar sesión</span>	
+                        <span>Normal Asistente</span>
                     </div>
-
+<br/>
                     <fieldset>
-                        <div>
+                        <div className="fields">
                             <label htmlFor="email">Email</label>
-                            <input 
-                                id="email" 
-                                name="email" 
-                                type="text" 
-                                maxLength="45" 
+                            <br />
+                            <input
+                                id="email"
+                                name="email"
+                                type="text"
+                                maxLength="45"
                                 value={user.email}
                                 onChange={onChange}
                             />
                         </div>
-                        <div>
+                        <div className="fields">
                             <label htmlFor="password">Contraseña</label>
-                            <input 
-                                id="password" 
-                                name="password" 
-                                type="password"  
+                            <br />
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
                                 value={user.password}
                                 onChange={onChange}
                             />
                         </div>
+                        <br />
+                        <div id="inicio">
+                            <input
+                                id="btnLogin"
+                                type="submit"
+                                className="untBtn darkblue"
+                                value="INICIAR SESION"
+                                onClick={login}
+                            />
 
-                        <input 
-                            id="btnLogin" 
-                            type="submit" 
-                            className="untBtn darkblue" 
-                            value="INICIAR SESION"
-                            onClick={login}
-                        />
+                        </div>
                     </fieldset>
-                </form>                
-            </div>
-            <div className="pltLoginText">
-                <h3><span className="pltLoginSub1">Ayudamos</span> a las <br/> empresas a trabajar <br/> mas eficientemente</h3>
-                <span className="pltLoginSub2">LANTIA, plataforma integral para <br/> business intelligence, cienciometría <br/> y análisis de patentes.</span>
+                </form>
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default Login;
