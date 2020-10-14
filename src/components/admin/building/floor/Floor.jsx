@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 
+//redux
+import { useDispatch } from 'react-redux';
+import { getFloorAction } from '../../../../actions/ecoAction';
 
 const Floor = ({floor}) => {
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getFloorAction())
+    }, [])
     return ( 
         <>
             <h5><span style={{fontWeight:'bold'}}>Capacidad: </span>10 personas</h5>

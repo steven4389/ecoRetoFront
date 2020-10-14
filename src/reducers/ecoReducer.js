@@ -1,5 +1,6 @@
 import {
     GET_BUILDINGS,
+    GET_FLOORS,
     GET_FLOOR
 } from '../types/ecotypes';
 
@@ -20,10 +21,16 @@ export default function(state = initialState, action){
                 buildings:action.payload,
             }
 
-        case GET_FLOOR:
+        case GET_FLOORS:
             return{
                 ...state,
                 floors:action.payload,
+            }
+
+        case GET_FLOOR:
+            return{
+                ...state,
+                floor:action.payload,
             }
 
         default:

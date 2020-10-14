@@ -1,5 +1,6 @@
 import {
     GET_BUILDINGS,
+    GET_FLOORS,
     GET_FLOOR
 } from '../types/ecotypes';
 import clienteAxios from '../components/config/axios';
@@ -73,6 +74,30 @@ export function getFloorsAction(building){
     }
 }
 
+export function getFloorAction(){    
+    return async(dispatch) => {
+        try {
+            
+            //clienteAxios.get('/get/pisos',building)
+
+            var floor = {
+                    id:1,
+                    capacidad: 50,
+                    puestosDisponibles: 20,
+                    usuarios = [
+                        {idPuesto: 1, nombre: 'Carlos', cargo: 'Gerente', puesto: '01'},
+                        {idPuesto: 2, nombre: 'Juan', cargo: 'Secreteario', puesto: '02'},
+                    ]
+                }
+            
+               await dispatch(getFloor(floor));
+               
+               return '1';
+        } catch (error) {
+            return 'error';
+        }
+    }
+}
 
 const getBuildings = buildings => ({
     type:GET_BUILDINGS,
@@ -80,6 +105,11 @@ const getBuildings = buildings => ({
 });
 
 const getFloors = floors => ({
-    type:GET_FLOOR,
+    type:GET_FLOORS,
     payload:floors
+});
+
+const getFloor = floor => ({
+    type:GET_FLOOR,
+    payload:floor
 });
