@@ -9,25 +9,9 @@ export function getBuildingsAction(){
     return async(dispatch) => {
         try {
             
-            var buildings = [
-                {   
-                    id:1,
-                    nombre:'EDIFICIO PRINCIPAL',
-                    disponibilidad:'30'
-                },
-                {   
-                    id:2,
-                    nombre:'EDIFICIO TEUSACÁ',
-                    disponibilidad:'53'
-                },
-                {   
-                    id:3,
-                    nombre:'EDIFICIO 13-34',
-                    disponibilidad:'8'
-                },
-            ]
-            
-               await dispatch(getBuildings(buildings));
+            const buildings = await clienteAxios.get('get/edificios')
+
+            await dispatch(getBuildings(buildings.data));
                
                return '1';
         } catch (error) {

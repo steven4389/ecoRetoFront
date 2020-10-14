@@ -8,6 +8,7 @@ const User = () => {
     //redux
     const { nombre,role,posicion,cargo,puesto } = useSelector(state => state.auth)
 
+    console.log(nombre)
     return ( 
         <>
             <h1>{nombre}</h1>

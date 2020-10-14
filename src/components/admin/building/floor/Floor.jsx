@@ -1,4 +1,5 @@
 import React from 'react';
+import data from './archivo.js';
 
 //redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,6 +14,8 @@ const Floor = () => {
     const eliminarPuesto = (id) => {
         dispatch(deletePuestoAction(id));
     }
+
+    console.log(data)
     return ( 
         <>
             <h5><span style={{fontWeight:'bold'}}>Capacidad: </span>{capacidad}</h5>

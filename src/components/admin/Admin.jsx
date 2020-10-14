@@ -12,16 +12,24 @@ const Admin = () => {
     const dispatch = useDispatch();
 
     const buildings = useSelector(state => state.eco.buildings);
+    const nombre = Object.keys(buildings)
 
+    const array = []
+    for(const i in buildings){
+        console.log(i)
+        const objetoCompleto = {...buildings[i], nombre: i}
+        array.push(objetoCompleto)
+    }
     useEffect(() => {
        dispatch(getBuildingsAction()); 
     }, [])
 
+    console.log(array)
     return (
         <div className="adminComponent">
             <div className="row">
                 {
-                    buildings.map((building, i) => {
+                    array.map((building, i) => {
                         return (<div className="col-12 col-md-4 col-lg-3" key={i}>
                             <AdminItem 
                                 building={building}
