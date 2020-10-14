@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Floor from './floor/Floor'
+import data from './floor/archivo'
 
 //redux
 import { useDispatch, useSelector } from 'react-redux'
@@ -12,6 +13,18 @@ const Building = ({...props}) => {
     const floors = useSelector(state => state.eco.floors);
 
 
+    const arrayP = []
+    for(const i in data){
+      arrayP.push({piso: data[i].piso, edificio: data[i].edificio})
+    }
+    let edificio1 = arrayP.filter(item => item.edificio == 1)
+    let edificio2 = arrayP.filter(item => item.edificio == 2)
+    let edificio3 = arrayP.filter(item => item.edificio == 3)
+
+    edificio1 = edificio1.map(item => {
+        return +item.piso.substr(item.piso.length -1, 1)
+    })
+    console.log(Math.max(...edificio1))
     useEffect(() => {
         dispatch(getFloorsAction(props.match.params.id)); 
      }, [])

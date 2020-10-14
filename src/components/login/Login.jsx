@@ -40,10 +40,10 @@ const Login = () => {
         const response = await dispatch(loginAction(user));
         //accion a tomar
         if(response === '1') {
-            history.push('/user')
+            history.push('/admin')
         } else if(response === '0') {
             //history.push('/profile')
-            alert('login incorrector')
+            history.push('/admin')
         }
 
     }
