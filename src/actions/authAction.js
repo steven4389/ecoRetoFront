@@ -16,12 +16,16 @@ export function loginAction(userIn){
             if(userIn.email === 'correo@correo.com' && userIn.password === '123456'){
                
                 var user = {
-                    email:userIn.email,
                     id:1,
-                    phone:'315785697',
-                    firstname:'Diego',
-                    lastname:'salazar',
-                    role:1
+                    nombre:'Diego',
+                    posicion:'Jefe',
+                    cargo:'TI',
+                    role:1,
+                    puesto:{
+                        edificio:'EDIFICIO PRINCIPAL',
+                        piso:5,
+                        puesto:2
+                    }
                 }
                 await dispatch(loginSuccess(user));
                 return '1'

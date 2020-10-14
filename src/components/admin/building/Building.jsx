@@ -1,22 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Floor from './floor/Floor'
 
-const Building = () => {
+//redux
+import { useDispatch, useSelector } from 'react-redux'
+import { getFloorsAction } from '../../../actions/ecoAction'
+
+const Building = ({...props}) => {
+
+    //redux
+    const dispatch = useDispatch();
+    const floors = useSelector(state => state.eco.floors);
+
+
+    useEffect(() => {
+        dispatch(getFloorsAction(props.match.params.id)); 
+     }, [])
+
+    //props.match.params.id
     return ( 
         <>
-            <div className="building container mt-5">
+            <div className="building contenedor mt-5">
                 <div className="mb-3 building-header">
                     <h1 style={{marginBottom:'0px'}}>Edificio Principal</h1>
-                    <h5>ocupacion 30%</h5>
+                    <h5>Ocupacion 30%</h5>
                 </div>
                 <div className='row'>
                     <div className="col-2">
-                        <h1 className='btn btn-primary'>pisos 1</h1>
-                        <h1 className='btn'>pisos 2</h1>
-                        <h1 className='btn'>pisos 3</h1>
-                        <h1 className='btn'>pisos 4</h1>
+                        {
+                            floors.map((floor, i) => {
+                                return (<div className="" key={i}>
+                                    <h2 className='btn btn-primary px-3'>{floor.nombre}</h2>
+                                </div>)
+                            })
+                        }
                     </div>
-                    <div className="building-body col-10">
-                        <h1>el body</h1>
+                    <div className="building-body col-10 p-3">
+                        <Floor />  
                     </div>
                 </div>
             </div>

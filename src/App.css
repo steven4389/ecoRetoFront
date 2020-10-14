@@ -3,13 +3,16 @@
   --main-color-hover: #a2b33a;
 }
 
+.contenedor{
+  margin: 0px 10% 0px 10%;
+}
+
 .building-body{
   border: 1px solid black;
   border-radius: 10px;
 }
 
 .btn{
-  min-width: 150px!important;
   background-color: #DADADA!important;
 }
 
@@ -21,4 +24,20 @@
 }
 .btn-primary:hover{
   background-color: var(--main-color-hover)!important;
+}
+.row{
+  margin:0!important;
+}
+
+/***** Building *******/
+.building-position{
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+}
+
+.building-cancel{
+  color:gainsboro;
+  border: 1px solid gainsboro;
+  border-radius: 50%;
+  cursor: pointer;
 }

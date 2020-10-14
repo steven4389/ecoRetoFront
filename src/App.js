@@ -7,6 +7,7 @@ import Building from './components/admin/building/Building'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Admin from './components/admin/Admin.jsx'
 import Floor from './components/floor/Floor.jsx'
+import User from './components/user/User'
 
 //redux
 import { Provider } from 'react-redux';
@@ -19,8 +20,9 @@ function App() {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/user" component={User} />
             <Route exact path="/admin" component={Admin} />
-            <Route exact path="/building" component={Building} />
+            <Route exact path="/building/:id" component={Building} />
             <Route exact path="/floor" component={Floor} />
           </Switch>
         </Provider>

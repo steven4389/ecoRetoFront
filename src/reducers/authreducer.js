@@ -6,14 +6,12 @@ import {
 
 //state
 const initialState = {
-    email:null,
-    userId:null,
-    phone:null,
-    firstname:null,
-    lastname:null,
+    id:null,
+    nombre:null,
     role:null,
-    autenticated:-1,
-    reload:true   
+    posicion:null,
+    cargo:null,
+    puesto:{}
 }
 
 export default function(state = initialState, action){
@@ -22,14 +20,12 @@ export default function(state = initialState, action){
         case LOGIN_SUCCESS:
             return{
                 ...state,
-                email:action.payload.email,
-                firstname:action.payload.firstname,
-                lastname:action.payload.lastname,
-                phone:action.payload.phone,
+                id:action.payload.id,
+                nombre:action.payload.nombre,
                 role:action.payload.role,
-                userId:action.payload.userId,
-                autenticated:true,
-                reload:true
+                posicion:action.payload.posicion,
+                cargo:action.payload.cargo,
+                puesto:action.payload.puesto,
             }
 
         default:
