@@ -100,6 +100,22 @@ export function getFloorAction(floorId){
     }
 }
 
+export function deletePuestoAction(puestoId){    
+    return async(dispatch) => {
+        try {
+            
+            //clienteAxios.get('/get/pisos',building)
+            
+            
+            //await dispatch(getFloor(floor));
+               
+               return '1';
+        } catch (error) {
+            return 'error';
+        }
+    }
+}
+
 const getBuildings = buildings => ({
     type:GET_BUILDINGS,
     payload:buildings
