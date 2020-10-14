@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './login.css';
+import logo from './ecopetrol.png'
 
 //redux
 import {useHistory} from 'react-router-dom';
@@ -52,6 +53,7 @@ const Login = () => {
         <div className="home">
             <div className="pltZoneLogin">
                 <form id="frmLogin">
+                <img className='w-75 ml-5' src={logo}/>
                     <div className="pltBoxLogo">
                         <span>Normal Asistente</span>
                     </div>
