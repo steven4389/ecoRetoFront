@@ -23,10 +23,10 @@ export function loginAction(userIn){
                     lastname:'salazar',
                     role:1
                 }
-                console.log('aca',user.email);
                 await dispatch(loginSuccess(user));
+                return '1'
             }else{
-                console.log('no entra');
+                return '0'
             }
 
             /*if(response.data.token){
